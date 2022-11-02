@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.blogs-section{
+    background-color: #232323;
+    color: white;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.search {
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+    width: 95%;
+    padding-top: 0.3rem;
+}
+.search input {
+    margin: 0.5rem;
+    margin-left: 1rem;
+    width: 90%;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #FD8558;
+    
+}
+.search button {
+    border: none;
+    margin: 0.2rem;
+    cursor: pointer;
+    width: 3rem;
+    background: none;
+}
+.search button img {
+    width: 60%;
+}
+
+.blog-item {
+    background-color: white;
+    color: black;
+    margin-top: 2rem;
+    display: flex;
+    border-radius: 2rem;
+    width: 95%;
+    overflow: hidden;
+}
+
+.blog-item-image {
+    margin-bottom: -0.5rem;
+    object-fit: cover;
+}
+.blog-info {
+    margin: 1rem;
+}
+.blog-info-details {
+    display: flex;
+    justify-content: space-between;
+}
+.blog-info-details h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+.blog-edit {
+    display: grid;
+    align-items: center;
+}
+.blog-edit img {
+    width: 1.2rem;
+    margin-right: 1rem;
+}
+.blog-info-description {
+    margin-top: 1rem;
+}
+.date {
+    display: flex;
+    justify-content: end;
+    margin-top: 0.5rem;
+    padding-right: 1rem;
+}
+.add-blog-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.add-blog-container a {
+    text-decoration: none;
+    color: white;
+    background-color: #FD8558;
+    width: 12rem;
+    height: 3.5rem;
+    border-radius: 2rem;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.add-blog-container :hover{
+    background-color: white;
+    color: #FD8558;
+}
+
+::placeholder {
+    color: black;
+    font-size: 1rem;
+    opacity: 0.7;
+    padding-left: 1rem;
+}

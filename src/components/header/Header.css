@@ -1,0 +1,9 @@
+.header{
+    width: 100%;
+    display: flex;
+    background-color: #232323;
+}
+.logo {
+    width: 20%;
+    margin: 2rem;
+}

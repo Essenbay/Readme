@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    background-color: #232323;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.profile-container {
+    background-image: url("../../images/cover.png");
+    padding-top: 20rem;
+    object-fit: cover;
+    border-radius: 2rem;
+    margin: 3.1rem;
+    margin-top: 0;
+}
+.profile-bottom {
+    display: flex;
+    border-radius: 2rem;
+    background-color: white;
+    height: 13em;
+}
+.profile-image {
+    text-align: center;
+    padding: 2rem;
+    color: black;
+}
+.profile-image img {
+    width: 15rem;
+    margin-top: -10rem;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.profile-name {
+    font-size: 1.8rem;
+}
+.profile-info {
+    padding: 1rem;
+}
+.profile-info-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.profile-info-details img {
+    padding-right: 1em;
+    height: 2rem;
+}
+.location {
+    display: flex;
+    align-items: center;
+}
+.location img {
+    margin-right: 0.5rem;
+}
+.location p {
+    font-size: 1em;
+    display: grid;
+    align-items: center;
+}
+.profile-info-description{
+    font-size: 1.2em;
+}
