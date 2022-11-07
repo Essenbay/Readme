@@ -1,9 +1,9 @@
-import "./Profile.css"
+import "./ProfilePage.css"
 import React from 'react'
 import Header from '../header/Header'
 import UserProfile from "../UserProfile/UserProfile";
 import Blogs from "../Blogs/Blogs";
-function Profile(){
+function ProfilePage(){
     return (
         <div id="wrapper">
             <Header />
@@ -12,4 +12,4 @@ function Profile(){
         </div>
     )
 }
-export default Profile;
+export default ProfilePage;
