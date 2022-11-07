@@ -9,12 +9,17 @@
 }
 
 .blog-item-image {
-    margin-bottom: -0.5rem;
     object-fit: cover;
 }
+
 .blog-info {
-    margin: 1rem;
+    margin: 1rem 2rem;
+    object-fit: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
 }
+
 .blog-info-details {
     display: flex;
     justify-content: space-between;
@@ -29,14 +34,10 @@
 }
 .blog-edit img {
     width: 1.2rem;
-    margin-right: 1rem;
 }
 .blog-info-description {
     margin-top: 1rem;
 }
 .date {
-    display: flex;
-    justify-content: end;
-    margin-top: 0.5rem;
-    padding-right: 1rem;
+    align-self: flex-end;
 }
