@@ -45,12 +45,13 @@
     display: flex;
     justify-content: center;
 }
-.add-blog-container a {
+.add-blog-container button {
+    font-size: 1.2rem;
     text-decoration: none;
     color: white;
     background-color: #FD8558;
-    width: 12rem;
-    height: 3.5rem;
+    width: 14rem;
+    height: 4rem;
     border-radius: 2rem;
     text-align: center;
     display: grid;

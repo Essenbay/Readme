@@ -1,18 +1,23 @@
 .blog-item {
+    width: 95%;
+    height: 20em;
+    border-radius: 2rem;
     background-color: white;
     color: black;
     margin-top: 2rem;
+
     display: flex;
-    border-radius: 2rem;
-    width: 95%;
     overflow: hidden;
 }
 
 .blog-item-image {
+    width: 50%;
+
     object-fit: cover;
 }
 
 .blog-info {
+    width: 100%;
     margin: 1rem 2rem;
     object-fit: cover;
     display: flex;
@@ -20,7 +25,12 @@
     justify-content: end;
 }
 
+.blog-info-text{
+    width: 100%;
+}
+
 .blog-info-details {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -38,6 +48,6 @@
 .blog-info-description {
     margin-top: 1rem;
 }
-.date {
+.blog-date {
     align-self: flex-end;
 }

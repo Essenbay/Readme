@@ -5,6 +5,7 @@ import editIcon from '../../images/icons/edit.png'
 import photo1 from '../../images/photo1.png'
 import photo2 from '../../images/photo2.png'
 import BlogItem from '../BlogItem/BlogItem'
+import BlogAddForm from '../BlogAddForm/BlogAddFrom'
 
 
 function Blogs(){
@@ -12,24 +13,26 @@ function Blogs(){
     const description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae nam doloremque praesentium ducimus quis molestiae dolores quibusdam quod eum. Sapiente error tempore quos illum tempora magnam, consequuntur laborum accusantium commodi!"
     const date = "10 Dec, 2021"
 
-    const [blogs, setBlogs] = useState([]);
+    const [addBlogActive, setBlogActive] = useState(false);
+    const [blogs, setBlogs] = useState([])
 
-    const addBlog = () => {
+    const addBlog = (title, description, date, photo) => {
+        if(title && description && date && photo){
+            const newItem = {
+                id: Math.random().toString(36).substr(2,9),
+                title: title,
+                description: description,
+                date: date,
+                photo: photo
+            }
+            setBlogs([...blogs, newItem])
+        }
+    }
+
+    const toggleBlog = (id) => {
 
     }
 
-    const removeBlog = () => {
-
-    }
-
-    const handleToggle = () => {
-
-    }
-
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleAddBlogPopup = () =>{
-        setIsOpen(!isOpen);
-    }
     return(
         <div className="blogs-section">
             <form action="#" class="search">
@@ -38,12 +41,25 @@ function Blogs(){
                     <img src={searchIcon} />
                 </button>
             </form>
-            <BlogItem title = {title} photoSource ={photo1} description={description} date={date}/>
-            <BlogItem title = {title} photoSource ={photo2} description={description} date={date}/>            
+            <BlogItem key={1} title={title} description={description} date={date} photoSource={photo1} toggleBlog={toggleBlog} />
+            {blogs.map((blog) =>{
+                return (
+                    <BlogItem 
+                        key={blog.id}
+                        title={blog.title}
+                        description={blog.description}
+                        date={blog.date}
+                        photoSource={blog.photo}
+                        toggleBlog={toggleBlog} 
+                    />
+                )
+            })}
 
-             <div class="add-blog-container" onClick={toggleAddBlogPopup}>
-                <a href="#">Add Blog</a>
+            
+             <div class="add-blog-container" onClick={() => {setBlogActive(true)}}>
+                <button>Add Blog</button>
             </div>
+            <BlogAddForm active={addBlogActive} setActive={setBlogActive} addBlog={addBlog} />
         </div>
     )
 }
