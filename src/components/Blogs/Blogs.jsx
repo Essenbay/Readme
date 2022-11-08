@@ -6,6 +6,7 @@ import photo1 from '../../images/photo1.png'
 import photo2 from '../../images/photo2.png'
 import BlogItem from '../BlogItem/BlogItem'
 import BlogAddForm from '../BlogAddForm/BlogAddFrom'
+import BlogChangeForm from '../BlogChangeForm/BlogChangeFrom'
 
 
 function Blogs(){
@@ -13,7 +14,7 @@ function Blogs(){
     const description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae nam doloremque praesentium ducimus quis molestiae dolores quibusdam quod eum. Sapiente error tempore quos illum tempora magnam, consequuntur laborum accusantium commodi!"
     const date = "10 Dec, 2021"
 
-    const [addBlogActive, setBlogActive] = useState(false);
+    const [addBlogActive, setAddBlogActive] = useState(false);
     const [blogs, setBlogs] = useState([])
 
     const addBlog = (title, description, date, photo) => {
@@ -29,37 +30,34 @@ function Blogs(){
         }
     }
 
-    const toggleBlog = (id) => {
-
+    const removeBlog = (id) => {
+        console.log(`Deleted item: ${id}`);
+        setBlogs([...blogs.filter((blog) => blog.id !== id)]);
     }
 
     return(
         <div className="blogs-section">
-            <form action="#" class="search">
+            <form action="#" className="search">
                 <input type="text" id="search" name="search" placeholder="Search" />
                 <button type="submit">
                     <img src={searchIcon} />
                 </button>
             </form>
-            <BlogItem key={1} title={title} description={description} date={date} photoSource={photo1} toggleBlog={toggleBlog} />
             {blogs.map((blog) =>{
                 return (
                     <BlogItem 
-                        key={blog.id}
-                        title={blog.title}
-                        description={blog.description}
-                        date={blog.date}
-                        photoSource={blog.photo}
-                        toggleBlog={toggleBlog} 
+                        key={blogs.id}
+                        blog={blog}
+                        removeBlog={removeBlog}
                     />
                 )
             })}
 
             
-             <div class="add-blog-container" onClick={() => {setBlogActive(true)}}>
+             <div className="add-blog-container" onClick={() => {setAddBlogActive(true)}}>
                 <button>Add Blog</button>
             </div>
-            <BlogAddForm active={addBlogActive} setActive={setBlogActive} addBlog={addBlog} />
+            <BlogAddForm active={addBlogActive} setActive={setAddBlogActive} addBlog={addBlog} />
         </div>
     )
 }

@@ -31,23 +31,35 @@
 .addblog-item-image {
     width: 50%;
     height: 100%;
-
-}
-
-.addblog-item-image label{
-    width: 100%;
-    height: 100%;
-    display: flex;
+    position: relative;
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    background: no-repeat url('../../images/default-image.png');
-    background-size: cover;
 }
-
 
 .addblog-item-image input{
     display: none;
+}
+
+.addblog-item-image-preview{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.addblog-item-image-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.addblog-item-image-icon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .addblog-info {

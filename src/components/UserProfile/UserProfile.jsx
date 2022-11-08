@@ -18,22 +18,22 @@ function UserProfile(){
             <div className='profile-backgound'>
                 <img src={userBackgound} alt="Backgound" srcset="" />
             </div>
-            <div class="profile-bottom">
-                <div class="profile-image">
+            <div className="profile-bottom">
+                <div className="profile-image">
                     <img src={userAvatar}/>
-                    <h4 class="profile-name">
+                    <h4 className="profile-name">
                         {userName}
                     </h4>
                 </div>
-                <div class="profile-info">
-                    <div class="profile-info-details">
-                        <div class="location">
+                <div className="profile-info">
+                    <div className="profile-info-details">
+                        <div className="location">
                             <img src={locationSign}/>
                             <p>{userLocation}</p>
                         </div>
                         <img src={editSing}/>
                     </div>
-                    <div class="profile-info-description">
+                    <div className="profile-info-description">
                        {userDescription}
                     </div>
                 </div>

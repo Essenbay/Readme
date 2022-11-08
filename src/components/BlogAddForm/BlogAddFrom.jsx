@@ -17,16 +17,15 @@ function BlogAddForm({active, setActive, addBlog}){
 
     const handleDescriptionChange = (e) => {
         setdescriptionInput(e.currentTarget.value)
-
     }
 
     const handleImageUpload = (e) =>{
-        setImageInput(URL.createObjectURL(e.target.files[0]));
+        setImageInput(e.target.files[0]);
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        addBlog(titleInput, descriptionInput, dateInput, defaultImage)
+        addBlog(titleInput, descriptionInput, dateInput, imageInput)
         setUserInput();
         setActive(false);
     }
@@ -37,7 +36,7 @@ function BlogAddForm({active, setActive, addBlog}){
         setImageInput(defaultImage);
     }
 
-    const handleCalcel = ()=>{
+    const handleCancel = ()=>{
         setUserInput();
         setActive(false)
     }
@@ -47,12 +46,13 @@ function BlogAddForm({active, setActive, addBlog}){
             <form className="addBlogModal-content" 
                 onClick={e => e.stopPropagation()}
                 onSubmit={handleSubmit}>
-                    <div className="addblog-item-image">
-                        <label htmlFor="uploadBlogImage">
+                        <label className="addblog-item-image" htmlFor="uploadBlogImage">
                             <input  type="file" id="uploadBlogImage" onChange={handleImageUpload}/>
-                            <img src={addIcon} alt="Add" />
+                            <div className="addblog-item-image-preview">
+                                <img src={imageInput} alt="Image" />
+                            </div>
+                            <img className="addblog-item-image-icon" src={addIcon} alt="Add" />
                         </label>
-                    </div>
                     <div className="addblog-info">
                         <div className="addblog-info-text">
                             <input 
@@ -70,7 +70,7 @@ function BlogAddForm({active, setActive, addBlog}){
                                 maxLength={700}/>
                         </div>
                         <div className="addButton-group">
-                            <input className="button-cancel" type="button" value="Cancel" onClick={handleCalcel}/>
+                            <input className="button-cancel" type="button" value="Cancel" onClick={handleCancel}/>
                             <input className="button-save" type="submit" value="Save"/>
                         </div>
                     </div>        
