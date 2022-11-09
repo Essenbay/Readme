@@ -1,16 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body{
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    background-color: #232323;
-    font-family: 'Poppins', sans-serif;
-}
 
 .profile-container {
     position: relative;
     margin: 0em 3em 2em 3em;
+}
+
+.profile-backgound{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-backgound input{
+    display: none;
+}
+
+.uploadBackgound-preview{
+    position: relative;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.uploadBackgound-preview img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.uploadBackgound-icon{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .profile-backgound img{
@@ -27,46 +54,130 @@ body{
 .profile-bottom {
     position: relative;
     display: flex;
-    border-radius: 2em;
+    border-radius: 2rem;
     background-color: white;
     height: max-content;
+    min-height: 12rem;
 }
-.profile-image {
-    text-align: center;
-    padding: 2rem;
-    color: black;
-}
-.profile-image img {
-    width: 15rem;
+
+.profile-left{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 12rem;
     margin-top: -10rem;
+    width: 20%;
+}
+
+.profile-image{
+    position: absolute;
+    margin: auto;
+}
+
+.profile-image input{
+    display: none;
+}
+
+.profile-image-preview{
+    background-color: #FD8558;
     border-radius: 50%;
-    border: 5px solid white;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: auto;
+    left: 0;
+    width: 100%;
 }
+
+.profile-image-preview img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-image-icon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+}
+
 .profile-name {
-    font-size: 1.8rem;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 40%;
 }
+
+.input-profile-name{
+    background: none;
+    width: max-content;
+    font-size: 1.8rem;
+    text-align: center;
+    border: none;
+}
+
 .profile-info {
     padding: 1rem;
 }
-.profile-info-details {
+
+.profile-right{
+    padding: 0.5em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.profile-right-head{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.profile-location{
+    height: 100%;
     display: flex;
     align-items: center;
+}
+
+.input-location{
+    margin: 0 1em;
+    font-size: 1.3em;
+    display: grid;
+    align-items: center;
+    border: none;
+}
+
+.button-group{
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-group div{
+    height: 100%;
+}
+
+.button-group img{
+    height: 100%;
+}
+
+.profile-info-details {
+    display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
 }
-.profile-info-details img {
-    padding-right: 1em;
-    height: 2rem;
+
+.profile-right-profileDescription{
+    width: 100%;
 }
-.location {
-    display: flex;
-    align-items: center;
-}
-.location p {
-    font-size: 1em;
-    display: grid;
-    align-items: center;
-}
+
 .profile-info-description{
     font-size: 1.2em;
 }

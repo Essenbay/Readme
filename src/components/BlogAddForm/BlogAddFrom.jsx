@@ -20,7 +20,8 @@ function BlogAddForm({active, setActive, addBlog}){
     }
 
     const handleImageUpload = (e) =>{
-        setImageInput(e.target.files[0]);
+        console.log(e.target.files);
+        setImageInput(URL.createObjectURL(e.target.files[0]));
     }
 
     const handleSubmit = (e) =>{
@@ -49,7 +50,7 @@ function BlogAddForm({active, setActive, addBlog}){
                         <label className="addblog-item-image" htmlFor="uploadBlogImage">
                             <input  type="file" id="uploadBlogImage" onChange={handleImageUpload}/>
                             <div className="addblog-item-image-preview">
-                                <img src={imageInput} alt="Image" />
+                                <img src={imageInput} alt="not found" />
                             </div>
                             <img className="addblog-item-image-icon" src={addIcon} alt="Add" />
                         </label>
