@@ -4,11 +4,22 @@ import searchIcon from '../../images/icons/search.png'
 import BlogItem from '../BlogItem/BlogItem'
 import BlogAddForm from '../BlogAddForm/BlogAddFrom'
 import BlogChangeForm from '../BlogChangeForm/BlogChangeFrom'
+import { useEffect } from 'react'
 
 
 function Blogs(){
+    const savedBlogsP = localStorage.getItem('blogs'); 
+    console.log(JSON.parse(savedBlogsP))
     const [addBlogActive, setAddBlogActive] = useState(false);
     const [blogs, setBlogs] = useState([])
+
+    useEffect(() => {
+        setBlogs(savedBlogsP ? JSON.parse(savedBlogsP) : []);
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('blogs', JSON.stringify(blogs));
+    }, [blogs])
 
     const addBlog = (title, description, date, photo) => {
         if(title && description && date && photo){
